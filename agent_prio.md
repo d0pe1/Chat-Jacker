@@ -38,14 +38,14 @@
   description: Request ChatGPT DOM dump from user
   why: Need accurate selectors for automation
   depends_on: []
-  status: [u]
+  status: [x]
 ---
 - uuid: a20ccaaa
   parent: 55b22049
   description: Request Codex DOM dump from user
   why: Need accurate selectors for automation
   depends_on: []
-  status: [u]
+  status: [x]
 ---
 - uuid: a057f02e
   parent: 55b22049
