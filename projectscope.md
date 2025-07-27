@@ -1,3 +1,14 @@
-# Example Project Scope
+Building Chat-Jacker
+The super nosey totally intended way to use ChatGPT!
 
-Set up the baseline files for the SelfPlanner agent ecosystem. This includes the README, agent protocol, and example task state so future agents can extend the project.
+Goal: Build a browser extension that can control ChatGPT and Codex via DOM API.
+
+Requirements:
+- Must read and write into the chat input fields in both UIs
+- Can detect message completion (when ChatGPT or Codex finishes typing)
+- Can pull response text and return it to the agent framework
+- Can queue multiple prompts without user intervention
+- All interactions must be fully headless (background script + manifest v3)
+
+Note: 
+if required, Agents can Ask user for brower dumps / site source
