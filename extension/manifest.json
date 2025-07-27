@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Chat-Jacker",
+  "version": "0.1",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*", "https://*.codex.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}

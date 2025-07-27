@@ -7,6 +7,32 @@
         "agents.md",
         "manifest.json"
       ]
+    },
+    {
+      "uuid": "bc756a2e",
+      "files": [
+        "projectscope.md",
+        "agent_tasks.md",
+        "agent_prio.md",
+        "metrics.md",
+        "state.md",
+        "taskmap.svg"
+      ]
+    },
+    {
+      "uuid": "55b22049",
+      "files": [
+        "dumps/CHATGPT_DOM_PLACEHOLDER.html",
+        "dumps/CODEX_DOM_PLACEHOLDER.html"
+      ]
+    },
+    {
+      "uuid": "8d468653",
+      "files": [
+        "extension/manifest.json",
+        "extension/background.js",
+        "extension/content.js"
+      ]
     }
   ]
 }
