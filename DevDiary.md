@@ -6,3 +6,5 @@
 - USER LOG: Hello Planner Agent, i have replaced your placeholder dumps with `CHATGPT_DOM.html` and `CODEX_DOM(mainpage).html`
 - PlannerAgent: DOM dumps received. Updated manifest and metrics. Tasks 96a1b336 and a20ccaaa marked complete, enabling a057f02e.
 - PlannerAgent: Attempted a057f02e. Extracted ChatGPT selector 'textarea[name="prompt-textarea"]'. Codex DOM unclear; request simplified dump. Marked a057f02e [u].
+- a057f02e Codex DOM inspected. Selected #prompt-textarea for input, buttons identified by text "Ask" and "Code" inside [data-testid="composer-trailing-actions"]. Added detection logic for main page vs task window.
+- Refined Codex handlers: added delayed button click, debounced completion observer, and capture latest message via [data-testid="message"].

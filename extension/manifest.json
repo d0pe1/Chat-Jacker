@@ -8,7 +8,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/*", "https://*.codex.com/*"],
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://*.codex.com/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_end"
     }
