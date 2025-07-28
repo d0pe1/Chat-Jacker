@@ -178,19 +178,19 @@
   description: Finalize documentation and examples
   why: Help users understand extension usage
   depends_on: [62540b33]
-  status: []
+  status: [x]
 ---
 - uuid: 3cbba0f3
   parent: 7be14b8e
   description: Update metrics and state for project completion
   why: Record final task statuses and graph hash
   depends_on: [6946d58d]
-  status: []
+  status: [x]
 ---
 - uuid: 40927029
   parent: 7be14b8e
   description: Run final MetaStateChecker
   why: Verify repository consistency before closing
   depends_on: [3cbba0f3]
-  status: []
+  status: [x]
 ---

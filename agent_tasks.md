@@ -30,33 +30,33 @@
   why: Provides base framework for DOM interaction
   depends_on: [55b22049]
   priority: 3
-  status: []
+  status: [x]
 ---
 - uuid: e8e121d2
   description: Implement ChatGPT DOM handlers
   why: Enable read/write and completion detection in ChatGPT UI
   depends_on: [8d468653]
   priority: 4
-  status: []
+  status: [x]
 ---
 - uuid: 295fe504
   description: Implement Codex DOM handlers
   why: Enable read/write and completion detection in Codex UI
   depends_on: [e8e121d2]
   priority: 5
-  status: []
+  status: [x]
 ---
 - uuid: a57eb7aa
   description: Implement queue management and output capture
   why: Automate multiple prompts and gather responses
   depends_on: [295fe504]
   priority: 6
-  status: []
+  status: [x]
 ---
 - uuid: 7be14b8e
   description: Finalize project and documentation
   why: Ensure completeness and run final checks
   depends_on: [a57eb7aa]
   priority: 7
-  status: []
+  status: [x]
 ---
