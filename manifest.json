@@ -22,8 +22,8 @@
     {
       "uuid": "55b22049",
       "files": [
-        "dumps/CHATGPT_DOM_PLACEHOLDER.html",
-        "dumps/CODEX_DOM_PLACEHOLDER.html"
+        "dumps/CHATGPT_DOM.html",
+        "dumps/CODEX_DOM(mainpage).html"
       ]
     },
     {
