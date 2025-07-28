@@ -36,3 +36,6 @@ The graph is acyclic; PlannerAgent ensures there are no missing or circular depe
 
 Agents should always update the relevant state files when planning or completing work so that the DAG and Gantt overlay remain accurate.
 
+## Extension Usage
+The browser extension maintains a shared prompt queue. Use `chrome.runtime.sendMessage({type: 'enqueuePrompt', prompt: 'your text'})` to add prompts from any tab running ChatGPT or Codex. Captured responses are POSTed to `http://localhost:5000/agent-response` where the agent framework can process them.
+

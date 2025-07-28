@@ -6,7 +6,8 @@
   "host_permissions": [
     "https://chat.openai.com/*",
     "https://chatgpt.com/*",
-    "https://*.codex.com/*"
+    "https://*.codex.com/*",
+    "http://localhost/*"
   ],
   "background": {
     "service_worker": "background.js"

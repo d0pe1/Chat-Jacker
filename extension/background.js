@@ -2,22 +2,43 @@
 // Handles queued prompts and messaging with content scripts
 
 const promptQueue = [];
+let active = false;
+const responses = [];
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'enqueuePrompt') {
-    promptQueue.push(message.prompt);
+    const tabId = sender.tab ? sender.tab.id : null;
+    promptQueue.push({ prompt: message.prompt, tabId });
     processQueue();
   } else if (message.type === 'responseCaptured') {
     console.log('Captured response:', message.text);
+    active = false;
+    responses.push({ text: message.text, tabId: sender.tab ? sender.tab.id : null });
+    sendToAgentFramework(message.text);
     processQueue();
   }
 });
 
 function processQueue() {
-  if (promptQueue.length === 0) return;
-  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    if (tabs[0]) {
-      chrome.tabs.sendMessage(tabs[0].id, { type: 'executePrompt', prompt: promptQueue.shift() });
-    }
-  });
+  if (active || promptQueue.length === 0) return;
+  active = true;
+  const item = promptQueue.shift();
+  const send = (tabId) => {
+    chrome.tabs.sendMessage(tabId, { type: 'executePrompt', prompt: item.prompt });
+  };
+  if (item.tabId) {
+    send(item.tabId);
+  } else {
+    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+      if (tabs[0]) send(tabs[0].id);
+    });
+  }
+}
+
+function sendToAgentFramework(text) {
+  fetch('http://localhost:5000/agent-response', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ response: text })
+  }).catch(err => console.error('Failed to send to agent framework', err));
 }
