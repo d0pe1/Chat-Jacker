@@ -23,7 +23,7 @@
   why: Needed to accurately target elements for automation
   depends_on: [bc756a2e]
   priority: 2
-  status: []
+  status: [x]
 ---
 - uuid: 8d468653
   description: Setup browser extension skeleton using Manifest v3
