@@ -52,7 +52,7 @@
   description: Analyze DOM dumps and document selectors
   why: Provide reliable hooks for scripts
   depends_on: [96a1b336, a20ccaaa]
-  status: [u]
+  status: [x]
 ---
 - uuid: b79cc393
   parent: 8d468653
