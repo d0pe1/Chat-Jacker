@@ -8,3 +8,16 @@
 - PlannerAgent: Attempted a057f02e. Extracted ChatGPT selector 'textarea[name="prompt-textarea"]'. Codex DOM unclear; request simplified dump. Marked a057f02e [u].
 - a057f02e Codex DOM inspected. Selected #prompt-textarea for input, buttons identified by text "Ask" and "Code" inside [data-testid="composer-trailing-actions"]. Added detection logic for main page vs task window.
 - Refined Codex handlers: added delayed button click, debounced completion observer, and capture latest message via [data-testid="message"].
+- b79cc393 Extension manifest created with MV3 configuration and host permissions for ChatGPT and Codex.
+- 532b4a5c Background script scaffolded for prompt queue.
+- 885bad7c Content script scaffolded with Codex helpers.
+- 649d87e9 Repo manifest updated to include extension files.
+- 0572df48 MetaStateChecker simulated; extension skeleton verified.
+- b35f9be0 ChatGPT read/write helpers added.
+- 8968c023 Completion detection for ChatGPT implemented.
+- a6d5ea2f ChatGPT output capture added to observer.
+- bbfc3e82 MetaStateChecker simulated for ChatGPT handlers.
+- 7045ec12 Codex helpers implemented.
+- d4a56894 Codex completion detection ready.
+- 5ee32f69 Codex output capture integrated.
+- 7146df7c MetaStateChecker simulated for Codex handlers.

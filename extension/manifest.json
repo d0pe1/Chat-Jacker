@@ -3,8 +3,16 @@
   "name": "Chat-Jacker",
   "version": "0.1",
   "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://*.codex.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Chat-Jacker"
   },
   "content_scripts": [
     {
