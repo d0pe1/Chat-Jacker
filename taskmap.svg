@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="200">
   <style>text { font-family: Arial; font-size: 12px; }</style>
   <text x="10" y="20">bc756a2e - Planning [x]</text>
-  <text x="10" y="40">55b22049 - Gather DOM info []</text>
+  <text x="10" y="40">55b22049 - Gather DOM info [x]</text>
   <text x="10" y="60">8d468653 - Extension skeleton []</text>
   <text x="10" y="80">e8e121d2 - ChatGPT handlers []</text>
   <text x="10" y="100">295fe504 - Codex handlers []</text>
