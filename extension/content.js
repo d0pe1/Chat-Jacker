@@ -77,7 +77,11 @@ function startNewChat() {
   });
   document.dispatchEvent(evt);
   const btn = document.querySelector('a,button[aria-label="New chat"]');
-  if (btn) btn.click();
+  if (btn) {
+    btn.click();
+    return true;
+  }
+  return false;
 }
 
 function sendPromptToPage(prompt) {

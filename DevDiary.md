@@ -33,3 +33,11 @@
 - ba6917bf selectChat function added for chat switching.
 - d274812e startNewChat function triggers keyboard shortcut.
 - da51f763 Documentation and metrics updated for new milestone.
+- c3a1b840 Finalize chat management milestone planned.
+- a8e5f211 Parsed sidebar DOM for chat links.
+- b8e7a390 getSidebarChats lists chats with ids and titles.
+- c1be24f6 selectChat opens conversations by id or title.
+- d1a5ed42 startNewChat triggers keyboard or button.
+- e2cf3bc5 APIs exposed via window.chatJacker.
+- fa8b39d3 jsdom tests verify chat functions; KeyboardEvent handled.
+- f1069bd2 TODO: monitor DOM for selector changes.
