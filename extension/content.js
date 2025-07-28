@@ -46,6 +46,40 @@ function getChatGPTMessageContainer() {
   return document.querySelector('main');
 }
 
+function getSidebarChats() {
+  const sidebar = document.querySelector('nav');
+  if (!sidebar) return [];
+  return Array.from(sidebar.querySelectorAll('a[href*="/c/"]')).map(a => {
+    const href = a.getAttribute('href');
+    const id = href ? href.split('/c/')[1] : null;
+    return { id, title: a.textContent.trim(), element: a };
+  });
+}
+
+function selectChat(chatIdOrTitle) {
+  const chats = getSidebarChats();
+  const chat = chats.find(c => c.id === chatIdOrTitle || c.title === chatIdOrTitle);
+  if (chat && chat.element) {
+    chat.element.click();
+    return true;
+  }
+  return false;
+}
+
+function startNewChat() {
+  const evt = new KeyboardEvent('keydown', {
+    key: 'O',
+    code: 'KeyO',
+    ctrlKey: true,
+    shiftKey: true,
+    bubbles: true,
+    cancelable: true
+  });
+  document.dispatchEvent(evt);
+  const btn = document.querySelector('a,button[aria-label="New chat"]');
+  if (btn) btn.click();
+}
+
 function sendPromptToPage(prompt) {
   if (isChatGPTPage()) {
     const input = getChatGPTInput();
@@ -108,3 +142,10 @@ const observer = new MutationObserver(() => {
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
+
+window.chatJacker = {
+  getSidebarChats,
+  selectChat,
+  startNewChat,
+  sendPromptToPage
+};

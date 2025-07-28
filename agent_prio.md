@@ -194,3 +194,31 @@
   depends_on: [3cbba0f3]
   status: [x]
 ---
+- uuid: 6e369182
+  parent: 5a2f75cd
+  description: Parse sidebar DOM for chat ids and titles
+  why: Provide chat listing via getSidebarChats
+  depends_on: []
+  status: [x]
+---
+- uuid: ba6917bf
+  parent: 5a2f75cd
+  description: Implement selectChat to open chat by id or title
+  why: Allow agents to switch conversations
+  depends_on: [6e369182]
+  status: [x]
+---
+- uuid: d274812e
+  parent: 5a2f75cd
+  description: Implement startNewChat via keyboard shortcut
+  why: Enable automated new conversation creation
+  depends_on: [6e369182]
+  status: [x]
+---
+- uuid: da51f763
+  parent: 5a2f75cd
+  description: Update documentation, metrics and state for new features
+  why: Keep project records consistent
+  depends_on: [ba6917bf, d274812e]
+  status: [x]
+---

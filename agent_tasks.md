@@ -60,3 +60,10 @@
   priority: 7
   status: [x]
 ---
+- uuid: 5a2f75cd
+  description: Add chat selection and new chat creation features
+  why: Manage multiple conversations via sidebar
+  depends_on: [7be14b8e]
+  priority: 8
+  status: [x]
+---

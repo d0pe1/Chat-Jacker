@@ -28,3 +28,8 @@
 - 6946d58d Documentation finalized with usage examples.
 - 3cbba0f3 Metrics and state updated for project completion.
 - 40927029 Final MetaStateChecker simulated.
+- 5a2f75cd Milestone for chat selection and new chat features.
+- 6e369182 Sidebar DOM parser implemented for chat listings.
+- ba6917bf selectChat function added for chat switching.
+- d274812e startNewChat function triggers keyboard shortcut.
+- da51f763 Documentation and metrics updated for new milestone.
