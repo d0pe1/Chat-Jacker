@@ -33,6 +33,12 @@
         "extension/background.js",
         "extension/content.js"
       ]
+    },
+    {
+      "uuid": "7be14b8e",
+      "files": [
+        "EXAMPLES.md"
+      ]
     }
   ]
 }
