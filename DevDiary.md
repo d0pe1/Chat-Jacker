@@ -21,3 +21,7 @@
 - d4a56894 Codex completion detection ready.
 - 5ee32f69 Codex output capture integrated.
 - 7146df7c MetaStateChecker simulated for Codex handlers.
+- bd305eed Prompt queue manager implemented in background script.
+- 89f8dcf4 Completion detection integrated with queue.
+- 71a3f231 Responses forwarded to agent framework via HTTP POST.
+- 62540b33 MetaStateChecker simulated for queue manager.
