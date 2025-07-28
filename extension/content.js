@@ -28,7 +28,37 @@ function getCodexMessageContainer() {
   return document.querySelector('[data-testid="conversation-panel"]') || document.querySelector('main');
 }
 
+function isChatGPTPage() {
+  return location.hostname.includes('chat.openai.com') ||
+         location.hostname.includes('chatgpt.com');
+}
+
+function getChatGPTInput() {
+  return document.querySelector('textarea[name="prompt-textarea"]');
+}
+
+function getChatGPTSendButton() {
+  const input = getChatGPTInput();
+  return input?.closest('form')?.querySelector('button[type="submit"]');
+}
+
+function getChatGPTMessageContainer() {
+  return document.querySelector('main');
+}
+
 function sendPromptToPage(prompt) {
+  if (isChatGPTPage()) {
+    const input = getChatGPTInput();
+    const button = getChatGPTSendButton();
+    if (input) {
+      input.focus();
+      input.value = prompt;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      if (button) setTimeout(() => button.click(), 100);
+    }
+    return;
+  }
+
   const input = getCodexInput();
   const button = getCodexSendButton();
   if (input) {
@@ -42,6 +72,11 @@ function sendPromptToPage(prompt) {
 }
 
 function checkCompletion() {
+  if (isChatGPTPage()) {
+    const container = getChatGPTMessageContainer();
+    if (!container) return false;
+    return !container.querySelector('.result-streaming');
+  }
   const container = getCodexMessageContainer();
   if (!container) return false;
   return !container.querySelector('.result-streaming,[data-testid="bot-spinner"],.animate-spin');
@@ -58,9 +93,15 @@ const observer = new MutationObserver(() => {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     if (checkCompletion()) {
-      const container = getCodexMessageContainer();
-      const messages = container?.querySelectorAll('[data-testid="message"]') || [];
-      const response = messages[messages.length - 1]?.innerText || '';
+      let container, messages, response;
+      if (isChatGPTPage()) {
+        container = getChatGPTMessageContainer();
+        messages = container?.querySelectorAll('.markdown') || [];
+      } else {
+        container = getCodexMessageContainer();
+        messages = container?.querySelectorAll('[data-testid="message"]') || [];
+      }
+      response = messages[messages.length - 1]?.innerText || '';
       chrome.runtime.sendMessage({ type: 'responseCaptured', text: response });
     }
   }, 200);

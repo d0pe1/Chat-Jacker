@@ -59,91 +59,91 @@
   description: Create extension manifest using MV3
   why: Chrome/Firefox extension base configuration
   depends_on: [a057f02e]
-  status: []
+  status: [x]
 ---
 - uuid: 532b4a5c
   parent: 8d468653
   description: Scaffold background script
   why: Manage headless interactions and queue
   depends_on: [b79cc393]
-  status: []
+  status: [x]
 ---
 - uuid: 885bad7c
   parent: 8d468653
   description: Scaffold content script
   why: Interface with page DOM
   depends_on: [b79cc393]
-  status: []
+  status: [x]
 ---
 - uuid: 649d87e9
   parent: 8d468653
   description: Update repository manifest with extension files
   why: Track new artifacts for agents
   depends_on: [532b4a5c, 885bad7c]
-  status: []
+  status: [x]
 ---
 - uuid: 0572df48
   parent: 8d468653
   description: Run MetaStateChecker after skeleton implementation
   why: Verify milestone integration
   depends_on: [649d87e9]
-  status: []
+  status: [x]
 ---
 - uuid: b35f9be0
   parent: e8e121d2
   description: Implement ChatGPT read/write helpers
   why: Allow extension to send and receive prompts
   depends_on: [a057f02e, 649d87e9]
-  status: []
+  status: [x]
 ---
 - uuid: 8968c023
   parent: e8e121d2
   description: Detect ChatGPT response completion
   why: Know when to capture output and send next prompt
   depends_on: [b35f9be0]
-  status: []
+  status: [x]
 ---
 - uuid: a6d5ea2f
   parent: e8e121d2
   description: Capture ChatGPT output text
   why: Return generated responses to agent framework
   depends_on: [8968c023]
-  status: []
+  status: [x]
 ---
 - uuid: bbfc3e82
   parent: e8e121d2
   description: Run MetaStateChecker for ChatGPT handlers
   why: Ensure reliability before continuing
   depends_on: [a6d5ea2f]
-  status: []
+  status: [x]
 ---
 - uuid: 7045ec12
   parent: 295fe504
   description: Implement Codex read/write helpers
   why: Automate Codex interactions
   depends_on: [a057f02e, 649d87e9]
-  status: []
+  status: [x]
 ---
 - uuid: d4a56894
   parent: 295fe504
   description: Detect Codex response completion
   why: Trigger capture and next prompt
   depends_on: [7045ec12]
-  status: []
+  status: [x]
 ---
 - uuid: 5ee32f69
   parent: 295fe504
   description: Capture Codex output text
   why: Provide responses back to agent framework
   depends_on: [d4a56894]
-  status: []
+  status: [x]
 ---
 - uuid: 7146df7c
   parent: 295fe504
   description: Run MetaStateChecker for Codex handlers
   why: Validate DOM automation stage
   depends_on: [5ee32f69]
-  status: []
+  status: [x]
 ---
 - uuid: bd305eed
   parent: a57eb7aa
