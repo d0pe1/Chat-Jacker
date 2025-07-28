@@ -39,6 +39,17 @@
       "files": [
         "EXAMPLES.md"
       ]
+    },
+    {
+      "uuid": "5a2f75cd",
+      "files": [
+        "extension/content.js",
+        "agent_tasks.md",
+        "agent_prio.md",
+        "DevDiary.md",
+        "metrics.md",
+        "state.md"
+      ]
     }
   ]
 }
