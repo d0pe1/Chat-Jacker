@@ -67,3 +67,10 @@
   priority: 8
   status: [x]
 ---
+---
+- uuid: c3a1b840
+  description: Finalize chat management APIs for sidebar interactions
+  why: Enable reliable chat switching and creation
+  depends_on: [5a2f75cd]
+  priority: 9
+  status: [x]

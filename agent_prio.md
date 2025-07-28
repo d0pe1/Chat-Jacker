@@ -222,3 +222,53 @@
   depends_on: [ba6917bf, d274812e]
   status: [x]
 ---
+---
+- uuid: a8e5f211
+  parent: c3a1b840
+  description: Parse ChatGPT sidebar DOM for chat ids and titles
+  why: Provide reliable hooks for chat management
+  depends_on: []
+  status: [x]
+---
+- uuid: b8e7a390
+  parent: c3a1b840
+  description: Implement getSidebarChats function
+  why: List available chats for agent control
+  depends_on: [a8e5f211]
+  status: [x]
+---
+- uuid: c1be24f6
+  parent: c3a1b840
+  description: Implement selectChat to open chat by id or title
+  why: Allow agents to navigate conversations
+  depends_on: [b8e7a390]
+  status: [x]
+---
+- uuid: d1a5ed42
+  parent: c3a1b840
+  description: Implement startNewChat via DOM or keyboard
+  why: Enable automated new conversation creation
+  depends_on: [b8e7a390]
+  status: [x]
+---
+- uuid: e2cf3bc5
+  parent: c3a1b840
+  description: Expose chat management APIs to other agents
+  why: Allow modular integration
+  depends_on: [c1be24f6, d1a5ed42]
+  status: [x]
+---
+- uuid: fa8b39d3
+  parent: c3a1b840
+  description: Write tests and handle errors for chat management
+  why: Ensure reliability of sidebar features
+  depends_on: [e2cf3bc5]
+  status: [x]
+---
+- uuid: f1069bd2
+  parent: c3a1b840
+  description: Flag DOM mismatches if selectors fail
+  why: Alert user when sidebar markup changes
+  depends_on: [fa8b39d3]
+  status: [u]
+---
