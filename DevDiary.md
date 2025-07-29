@@ -45,3 +45,13 @@
 - PlannerAgent: Analyzed Chrome extension for Firefox parity. Documented features: prompt queue, DOM helpers, completion detection, DOM mismatch reporting, chat management APIs.
 - PlannerAgent: Mapped chrome.* APIs to Firefox browser.* equivalents and noted service worker limitations.
 - PlannerAgent: Updated projectscope with Firefox architecture and created new milestone tasks.
+- fb052e6a Firefox planning milestone completed.
+- cdc27ea1 Added Firefox browser_specific_settings to manifest and updated permissions.
+- 0a9fc997 manifest updated with browser polyfill.
+- dbbd0a3f updated background to use browser API.
+- 0af1e701 refactored content script to use browser api.
+- eb00663d added web-ext config and npm script.
+- 794a4c1b added npm script for firefox testing.
+- 34996f4a performed manual QA for Firefox.
+- 28f4867c updated README and USAGE for Firefox.
+- 32bf3249 finalized Firefox milestone and ran MetaStateChecker.

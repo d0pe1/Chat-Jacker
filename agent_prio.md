@@ -299,60 +299,60 @@
   description: Add browser_specific_settings to manifest and adjust permissions
   why: Enable Firefox installation
   depends_on: [33430f27]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 0a9fc997
   parent: 2ad5ecb2
   description: Update repository manifest with new Firefox artifacts
   why: Track modified files for planning
   depends_on: [cdc27ea1]
-  status: [ ]
+  status: [x]
 ---
 - uuid: dbbd0a3f
   parent: ede4b0e6
   description: Polyfill browser APIs in background script
   why: Ensure queue manager works in Firefox
   depends_on: [0a9fc997]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 0af1e701
   parent: 254d7d3e
   description: Refactor content script to use browser APIs
   why: Maintain DOM control in Firefox
   depends_on: [dbbd0a3f]
-  status: [ ]
+  status: [x]
 ---
 - uuid: eb00663d
   parent: 8b03a0fe
   description: Configure web-ext for building and running tests
   why: Automate cross-browser validation
   depends_on: [0af1e701]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 794a4c1b
   parent: 8b03a0fe
   description: Add Firefox run script to npm test workflow
   why: Verify extension functions in Firefox
   depends_on: [eb00663d]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 34996f4a
   parent: a4a3ce6c
   description: Perform manual QA in Firefox and fix issues
   why: Ensure feature parity with Chrome
   depends_on: [794a4c1b]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 28f4867c
   parent: a4a3ce6c
   description: Update README and USAGE with Firefox instructions
   why: Document cross-browser installation steps
   depends_on: [34996f4a]
-  status: [ ]
+  status: [x]
 ---
 - uuid: 32bf3249
   parent: 0ab9402c
   description: Update metrics, state and run final MetaStateChecker
   why: Close Firefox milestone and verify repo
   depends_on: [28f4867c]
-  status: [ ]
+  status: [x]

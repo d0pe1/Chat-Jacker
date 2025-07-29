@@ -1,11 +1,13 @@
 // Background script for Chat-Jacker
 // Handles queued prompts and messaging with content scripts
 
+// uuid: dbbd0a3f
+const api = typeof browser !== 'undefined' ? browser : chrome;
 const promptQueue = [];
 let active = false;
 const responses = [];
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+api.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'enqueuePrompt') {
     const tabId = sender.tab ? sender.tab.id : null;
     promptQueue.push({ prompt: message.prompt, tabId });
@@ -27,12 +29,12 @@ function processQueue() {
   active = true;
   const item = promptQueue.shift();
   const send = (tabId) => {
-    chrome.tabs.sendMessage(tabId, { type: 'executePrompt', prompt: item.prompt });
+    api.tabs.sendMessage(tabId, { type: 'executePrompt', prompt: item.prompt });
   };
   if (item.tabId) {
     send(item.tabId);
   } else {
-    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+    api.tabs.query({ active: true, currentWindow: true }, tabs => {
       if (tabs[0]) send(tabs[0].id);
     });
   }
