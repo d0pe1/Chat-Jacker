@@ -55,3 +55,11 @@
 - 34996f4a performed manual QA for Firefox.
 - 28f4867c updated README and USAGE for Firefox.
 - 32bf3249 finalized Firefox milestone and ran MetaStateChecker.
+- 90425a4d setup Python environment and added requirements.txt with install instructions.
+- d6cc76b7 created chatjacker_cli.py with basic argument parsing.
+- 1030c9b5 added rich logging and command dispatcher stub.
+- 796956aa documented CLI examples in usage guide.
+- 5a56f567 added headless browser launcher and integrated into CLI.
+- dd9dd1ae implemented cookie persistence via storage_state.
+- ea085e7d added login prompt logic when no cookies are present.
+- 6b6c7fa4 documented persistent storage path in README.
