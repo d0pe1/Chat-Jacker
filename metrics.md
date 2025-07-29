@@ -1,6 +1,6 @@
 # Metrics
 
-total_tasks: 47
-completed_tasks: 47
-open_tasks: 0
-critical_path: c3a1b840
+total_tasks: 66
+completed_tasks: 50
+open_tasks: 16
+critical_path: 0ab9402c
