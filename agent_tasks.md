@@ -123,3 +123,73 @@
   depends_on: [a4a3ce6c]
   priority: 16
   status: [x]
+---
+- uuid: e68c381e-a088-46cf-bc1e-1217a5b04356
+  description: Plan Chat-Jacker CLI milestones and tasks
+  why: Provide structured roadmap for CLI features
+  depends_on: [0ab9402c]
+  priority: 17
+  status: [x]
+---
+- uuid: 8a132a08-2544-469e-bffc-929a17a555da
+  description: Implement core CLI framework with argument parsing
+  why: Provide entrypoint for headless automation
+  depends_on: [e68c381e-a088-46cf-bc1e-1217a5b04356]
+  priority: 18
+  status: []
+---
+- uuid: 0eec49b0-962f-4758-a3b7-6cad64c1e607
+  description: Build headless browser launcher with persistent sessions
+  why: Enable login reuse and navigation without UI
+  depends_on: [8a132a08-2544-469e-bffc-929a17a555da]
+  priority: 19
+  status: []
+---
+- uuid: c88a4597-f135-4b9e-ba25-5016cdac80d9
+  description: Add ChatGPT action support for conversations
+  why: Interact with ChatGPT via CLI
+  depends_on: [0eec49b0-962f-4758-a3b7-6cad64c1e607]
+  priority: 20
+  status: []
+---
+- uuid: e57069a8-19ac-4e69-ab7b-cdc7224754a5
+  description: Add Codex action support for task automation
+  why: Control Codex tasks from CLI
+  depends_on: [0eec49b0-962f-4758-a3b7-6cad64c1e607]
+  priority: 21
+  status: []
+---
+- uuid: 9bd98fb3-d1ff-4915-8e35-0cf62002989c
+  description: Create selector injection layer for DOM hooks
+  why: Reuse Chat-Jacker selectors across targets
+  depends_on: [c88a4597-f135-4b9e-ba25-5016cdac80d9, e57069a8-19ac-4e69-ab7b-cdc7224754a5]
+  priority: 22
+  status: []
+---
+- uuid: 47663495-dcf7-4c84-801c-26024dbc8153
+  description: Implement JSON output layer for CLI results
+  why: Provide structured output for agents
+  depends_on: [9bd98fb3-d1ff-4915-8e35-0cf62002989c]
+  priority: 23
+  status: []
+---
+- uuid: a84026d5-c998-4af0-bb5f-9a04c985c54c
+  description: Build agent integration hooks and plan mode
+  why: Allow chained actions from task files
+  depends_on: [47663495-dcf7-4c84-801c-26024dbc8153]
+  priority: 24
+  status: []
+---
+- uuid: 00c0a86e-7297-4f3a-ad56-09014022a908
+  description: Implement stretch goals like parallel execution and stealth
+  why: Provide optional advanced features
+  depends_on: [a84026d5-c998-4af0-bb5f-9a04c985c54c]
+  priority: 25
+  status: []
+---
+- uuid: b6a02b30-f40b-47ba-a82f-18623680aa8c
+  description: Finalize CLI, documentation and run MetaStateChecker
+  why: Ensure CLI readiness and clean project state
+  depends_on: [a84026d5-c998-4af0-bb5f-9a04c985c54c]
+  priority: 26
+  status: []

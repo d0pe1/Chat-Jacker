@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="220">
   <style>text { font-family: Arial; font-size: 12px; }</style>
-  <text x="10" y="20">bc756a2e - Planning [x]</text>
-  <text x="10" y="40">55b22049 - Gather DOM info [x]</text>
-  <text x="10" y="60">8d468653 - Extension skeleton []</text>
-  <text x="10" y="80">e8e121d2 - ChatGPT handlers []</text>
-  <text x="10" y="100">295fe504 - Codex handlers []</text>
-  <text x="10" y="120">a57eb7aa - Queue & capture []</text>
-  <text x="10" y="140">7be14b8e - Finalize []</text>
+  <text x="10" y="20">e68c381e - CLI planning [x]</text>
+  <text x="10" y="40">8a132a08 - Core CLI framework []</text>
+  <text x="10" y="60">0eec49b0 - Headless browser []</text>
+  <text x="10" y="80">c88a4597 - ChatGPT support []</text>
+  <text x="10" y="100">e57069a8 - Codex support []</text>
+  <text x="10" y="120">9bd98fb3 - Selector layer []</text>
+  <text x="10" y="140">47663495 - Output layer []</text>
+  <text x="10" y="160">a84026d5 - Agent hooks []</text>
+  <text x="10" y="180">00c0a86e - Stretch goals []</text>
+  <text x="10" y="200">b6a02b30 - Finalize CLI []</text>
 </svg>
