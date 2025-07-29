@@ -16,6 +16,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     responses.push({ text: message.text, tabId: sender.tab ? sender.tab.id : null });
     sendToAgentFramework(message.text);
     processQueue();
+  } else if (message.type === 'domMismatch') {
+    console.warn('DOM mismatch reported:', message.info);
+    sendToAgentFramework('DOM mismatch: ' + message.info);
   }
 });
 

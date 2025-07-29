@@ -41,3 +41,4 @@
 - e2cf3bc5 APIs exposed via window.chatJacker.
 - fa8b39d3 jsdom tests verify chat functions; KeyboardEvent handled.
 - f1069bd2 TODO: monitor DOM for selector changes.
+- f1069bd2 DOM mismatch detection added to content and background scripts.

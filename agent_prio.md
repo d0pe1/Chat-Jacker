@@ -270,5 +270,5 @@
   description: Flag DOM mismatches if selectors fail
   why: Alert user when sidebar markup changes
   depends_on: [fa8b39d3]
-  status: [u]
+  status: [x]
 ---
