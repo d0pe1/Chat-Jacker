@@ -1,6 +1,15 @@
 // Content script for Chat-Jacker
 // Handles DOM interaction for ChatGPT and Codex
 
+function reportDOMMismatch(info) {
+  console.warn('DOM mismatch:', info);
+  try {
+    chrome.runtime.sendMessage({ type: 'domMismatch', info });
+  } catch (err) {
+    // ignore if messaging is unavailable
+  }
+}
+
 function isCodexMainPage() {
   const heading = document.querySelector('h1');
   return heading && /What are we coding/i.test(heading.textContent);
@@ -11,21 +20,29 @@ function isCodexTaskWindow() {
 }
 
 function getCodexInput() {
-  return document.getElementById('prompt-textarea') ||
-         document.querySelector('textarea[name="prompt-textarea"]');
+  const el = document.getElementById('prompt-textarea') ||
+             document.querySelector('textarea[name="prompt-textarea"]');
+  if (!el) reportDOMMismatch('codex input prompt-textarea');
+  return el;
 }
 
 function getCodexSendButton() {
   if (isCodexTaskWindow()) {
-    return document.querySelector('[data-testid="code-button"]') ||
-           Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Code');
+    const btn = document.querySelector('[data-testid="code-button"]') ||
+                Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Code');
+    if (!btn) reportDOMMismatch('codex code-button');
+    return btn;
   }
-  return document.querySelector('[data-testid="ask-button"]') ||
-         Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Ask');
+  const btn = document.querySelector('[data-testid="ask-button"]') ||
+              Array.from(document.querySelectorAll('button')).find(b => b.textContent.trim() === 'Ask');
+  if (!btn) reportDOMMismatch('codex ask-button');
+  return btn;
 }
 
 function getCodexMessageContainer() {
-  return document.querySelector('[data-testid="conversation-panel"]') || document.querySelector('main');
+  const el = document.querySelector('[data-testid="conversation-panel"]') || document.querySelector('main');
+  if (!el) reportDOMMismatch('codex message container');
+  return el;
 }
 
 function isChatGPTPage() {
@@ -34,22 +51,35 @@ function isChatGPTPage() {
 }
 
 function getChatGPTInput() {
-  return document.querySelector('textarea[name="prompt-textarea"]');
+  const el = document.querySelector('textarea[name="prompt-textarea"]');
+  if (!el) reportDOMMismatch('chatgpt prompt textarea');
+  return el;
 }
 
 function getChatGPTSendButton() {
   const input = getChatGPTInput();
-  return input?.closest('form')?.querySelector('button[type="submit"]');
+  const btn = input?.closest('form')?.querySelector('button[type="submit"]');
+  if (!btn) reportDOMMismatch('chatgpt send button');
+  return btn;
 }
 
 function getChatGPTMessageContainer() {
-  return document.querySelector('main');
+  const el = document.querySelector('main');
+  if (!el) reportDOMMismatch('chatgpt message container');
+  return el;
 }
 
 function getSidebarChats() {
   const sidebar = document.querySelector('nav');
-  if (!sidebar) return [];
-  return Array.from(sidebar.querySelectorAll('a[href*="/c/"]')).map(a => {
+  if (!sidebar) {
+    reportDOMMismatch('sidebar nav');
+    return [];
+  }
+  const links = Array.from(sidebar.querySelectorAll('a[href*="/c/"]'));
+  if (links.length === 0) {
+    reportDOMMismatch('sidebar chat links');
+  }
+  return links.map(a => {
     const href = a.getAttribute('href');
     const id = href ? href.split('/c/')[1] : null;
     return { id, title: a.textContent.trim(), element: a };
@@ -81,6 +111,7 @@ function startNewChat() {
     btn.click();
     return true;
   }
+  reportDOMMismatch('new chat button');
   return false;
 }
 
