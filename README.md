@@ -40,3 +40,12 @@ Agents should always update the relevant state files when planning or completing
 The browser extension maintains a shared prompt queue. Use `chrome.runtime.sendMessage({type: 'enqueuePrompt', prompt: 'your text'})` to add prompts from any tab running ChatGPT or Codex. Captured responses are POSTed to `http://localhost:5000/agent-response` where the agent framework can process them.
 
 See [EXAMPLES.md](EXAMPLES.md) for a quick walkthrough.
+
+## Getting Started
+Detailed installation and usage instructions are provided in [USAGE.md](USAGE.md). It covers loading the extension, queuing prompts and running the included tests.
+
+## Release Checklist
+- Bump the version in `extension/manifest.json`.
+- Run `npm test` and ensure all tests pass.
+- Package the `extension` folder or load it unpacked in your browser.
+- Review `DevDiary.md` for a complete history of development decisions.
