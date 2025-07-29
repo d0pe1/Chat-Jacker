@@ -12,3 +12,11 @@ Requirements:
 
 Note: 
 if required, Agents can Ask user for brower dumps / site source
+
+Firefox Support Goal:
+- Mirror Chrome extension functionality under Firefox.
+- Use browser.* APIs or polyfills for cross-browser messaging.
+- Provide a Firefox-optimized manifest with browser_specific_settings.
+- Setup web-ext for testing and packaging.
+- Ensure background scripts and content scripts behave the same.
+

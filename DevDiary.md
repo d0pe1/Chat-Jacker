@@ -42,3 +42,6 @@
 - fa8b39d3 jsdom tests verify chat functions; KeyboardEvent handled.
 - f1069bd2 TODO: monitor DOM for selector changes.
 - f1069bd2 DOM mismatch detection added to content and background scripts.
+- PlannerAgent: Analyzed Chrome extension for Firefox parity. Documented features: prompt queue, DOM helpers, completion detection, DOM mismatch reporting, chat management APIs.
+- PlannerAgent: Mapped chrome.* APIs to Firefox browser.* equivalents and noted service worker limitations.
+- PlannerAgent: Updated projectscope with Firefox architecture and created new milestone tasks.

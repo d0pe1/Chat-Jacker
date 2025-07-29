@@ -74,3 +74,52 @@
   depends_on: [5a2f75cd]
   priority: 9
   status: [x]
+---
+- uuid: fb052e6a
+  description: Plan Firefox extension parity and audit APIs
+  why: Ensure Chrome features map to Firefox capabilities
+  depends_on: [c3a1b840]
+  priority: 10
+  status: [ ]
+---
+- uuid: 2ad5ecb2
+  description: Convert manifest for Firefox compatibility
+  why: Provide browser_specific_settings and required permissions
+  depends_on: [fb052e6a]
+  priority: 11
+  status: [ ]
+---
+- uuid: ede4b0e6
+  description: Adapt background scripts for Firefox APIs
+  why: Service worker and messaging differences must be handled
+  depends_on: [2ad5ecb2]
+  priority: 12
+  status: [ ]
+---
+- uuid: 254d7d3e
+  description: Update content scripts for Firefox quirks
+  why: Ensure DOM helpers and messaging work across browsers
+  depends_on: [ede4b0e6]
+  priority: 13
+  status: [ ]
+---
+- uuid: 8b03a0fe
+  description: Add web-ext build and test pipeline
+  why: Automate packaging and testing under Firefox
+  depends_on: [254d7d3e]
+  priority: 14
+  status: [ ]
+---
+- uuid: a4a3ce6c
+  description: QA and documentation for Firefox release
+  why: Validate parity and guide users
+  depends_on: [8b03a0fe]
+  priority: 15
+  status: [ ]
+---
+- uuid: 0ab9402c
+  description: Finalize cross-browser support and update metrics
+  why: Complete project with Firefox parity
+  depends_on: [a4a3ce6c]
+  priority: 16
+  status: [ ]
