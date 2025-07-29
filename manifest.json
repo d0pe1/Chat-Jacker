@@ -99,6 +99,76 @@
         "metrics.md",
         "state.md"
       ]
+    },
+    {
+      "uuid": "e68c381e-a088-46cf-bc1e-1217a5b04356",
+      "files": [
+        "projectscope.md",
+        "agent_tasks.md",
+        "agent_prio.md",
+        "metrics.md",
+        "state.md",
+        "taskmap.svg",
+        "manifest.json"
+      ]
+    },
+    {
+      "uuid": "8a132a08-2544-469e-bffc-929a17a555da",
+      "files": [
+        "chatjacker_cli.py",
+        "README.md",
+        "USAGE.md"
+      ]
+    },
+    {
+      "uuid": "0eec49b0-962f-4758-a3b7-6cad64c1e607",
+      "files": [
+        "chatjacker_cli.py",
+        "cli/browser.py"
+      ]
+    },
+    {
+      "uuid": "c88a4597-f135-4b9e-ba25-5016cdac80d9",
+      "files": [
+        "targets/chatgpt.py"
+      ]
+    },
+    {
+      "uuid": "e57069a8-19ac-4e69-ab7b-cdc7224754a5",
+      "files": [
+        "targets/codex.py"
+      ]
+    },
+    {
+      "uuid": "9bd98fb3-d1ff-4915-8e35-0cf62002989c",
+      "files": [
+        "selectors.js"
+      ]
+    },
+    {
+      "uuid": "47663495-dcf7-4c84-801c-26024dbc8153",
+      "files": [
+        "src/output.py"
+      ]
+    },
+    {
+      "uuid": "a84026d5-c998-4af0-bb5f-9a04c985c54c",
+      "files": [
+        "src/agent_hooks.py"
+      ]
+    },
+    {
+      "uuid": "00c0a86e-7297-4f3a-ad56-09014022a908",
+      "files": [
+        "src/advanced.py"
+      ]
+    },
+    {
+      "uuid": "b6a02b30-f40b-47ba-a82f-18623680aa8c",
+      "files": [
+        "README.md",
+        "USAGE.md"
+      ]
     }
   ]
 }
