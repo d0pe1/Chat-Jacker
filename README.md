@@ -44,6 +44,9 @@ See [EXAMPLES.md](EXAMPLES.md) for a quick walkthrough.
 ## Getting Started
 Detailed installation and usage instructions are provided in [USAGE.md](USAGE.md). It covers loading the extension, queuing prompts and running the included tests.
 
+## Firefox Support
+Run `npm run firefox` to launch the extension in Firefox using web-ext. Use `npm run test:firefox` to execute the test suite and open Firefox automatically.
+
 ## Release Checklist
 - Bump the version in `extension/manifest.json`.
 - Run `npm test` and ensure all tests pass.

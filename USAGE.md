@@ -11,6 +11,10 @@ This guide explains how to install the Chat-Jacker browser extension and run the
 1. Clone this repository.
 2. Run `npm install` in the project root to install the test dependencies.
 
+### Firefox
+Run `npm run firefox` to start the extension in Firefox using web-ext.
+Use `npm run test:firefox` to run the test suite and launch Firefox automatically.
+
 ## Loading the Extension
 1. Open your browser's extensions page and enable *Developer Mode*.
 2. Choose **Load unpacked** and select the `extension` directory from this repo.

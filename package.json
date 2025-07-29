@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node test/run_tests.js"
+    "test": "node test/run_tests.js",
+    "firefox": "web-ext run -c web-ext.config.js",
+    "test:firefox": "npm run test && npm run firefox"
   },
   "dependencies": {
     "jsdom": "^22.1.0"
+  },
+  "devDependencies": {
+    "web-ext": "^7.9.0"
   }
 }

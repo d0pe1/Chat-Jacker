@@ -1,10 +1,12 @@
 // Content script for Chat-Jacker
 // Handles DOM interaction for ChatGPT and Codex
+// uuid: 0af1e701
+const api = typeof browser !== 'undefined' ? browser : chrome;
 
 function reportDOMMismatch(info) {
   console.warn('DOM mismatch:', info);
   try {
-    chrome.runtime.sendMessage({ type: 'domMismatch', info });
+    api.runtime.sendMessage({ type: 'domMismatch', info });
   } catch (err) {
     // ignore if messaging is unavailable
   }
@@ -151,7 +153,7 @@ function checkCompletion() {
   return !container.querySelector('.result-streaming,[data-testid="bot-spinner"],.animate-spin');
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+api.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'executePrompt') {
     sendPromptToPage(message.prompt);
   }
@@ -171,7 +173,7 @@ const observer = new MutationObserver(() => {
         messages = container?.querySelectorAll('[data-testid="message"]') || [];
       }
       response = messages[messages.length - 1]?.innerText || '';
-      chrome.runtime.sendMessage({ type: 'responseCaptured', text: response });
+      api.runtime.sendMessage({ type: 'responseCaptured', text: response });
     }
   }, 200);
 });
