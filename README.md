@@ -47,6 +47,10 @@ Detailed installation and usage instructions are provided in [USAGE.md](USAGE.md
 ## Firefox Support
 Run `npm run firefox` to launch the extension in Firefox using web-ext. Use `npm run test:firefox` to execute the test suite and open Firefox automatically.
 
+## CLI Setup
+Run `pip install -r requirements.txt` to install Python dependencies. After installation run `playwright install` to download browser drivers.
+Session data is stored in `browser-data` so logins persist across runs.
+
 ## Release Checklist
 - Bump the version in `extension/manifest.json`.
 - Run `npm test` and ensure all tests pass.

@@ -387,7 +387,7 @@
   why: Provide dependencies for CLI execution
   depends_on: [d01b9695-ced6-4a95-80ef-ccfbc32b3112]
   priority: 18
-  status: []
+  status: [x]
 ---
 - uuid: d6cc76b7-bde5-4c03-9a11-bbc42cf52e7d
   parent: 8a132a08-2544-469e-bffc-929a17a555da
@@ -395,7 +395,7 @@
   why: Offer command line interface for automation
   depends_on: [90425a4d-44e1-4342-ba31-97c7edb84829]
   priority: 18
-  status: []
+  status: [x]
 ---
 - uuid: 1030c9b5-f496-4b20-afad-9a81ed33c841
   parent: 8a132a08-2544-469e-bffc-929a17a555da
@@ -403,7 +403,7 @@
   why: Route actions and provide readable output
   depends_on: [d6cc76b7-bde5-4c03-9a11-bbc42cf52e7d]
   priority: 18
-  status: []
+  status: [x]
 ---
 - uuid: 796956aa-313d-46e8-9ab6-ff85757de887
   parent: 8a132a08-2544-469e-bffc-929a17a555da
@@ -411,7 +411,7 @@
   why: Document basic commands
   depends_on: [1030c9b5-f496-4b20-afad-9a81ed33c841]
   priority: 18
-  status: []
+  status: [x]
 ---
 - uuid: 5a56f567-2647-4bf4-aeac-80b846c08044
   parent: 0eec49b0-962f-4758-a3b7-6cad64c1e607
@@ -419,7 +419,7 @@
   why: Allow automation without visible browser
   depends_on: [796956aa-313d-46e8-9ab6-ff85757de887]
   priority: 19
-  status: []
+  status: [x]
 ---
 - uuid: dd9dd1ae-0c56-4068-829d-52d0d7b0b360
   parent: 0eec49b0-962f-4758-a3b7-6cad64c1e607
@@ -427,7 +427,7 @@
   why: Maintain login across runs
   depends_on: [5a56f567-2647-4bf4-aeac-80b846c08044]
   priority: 19
-  status: []
+  status: [x]
 ---
 - uuid: ea085e7d-4b09-4848-ae13-bd6c5f12e48d
   parent: 0eec49b0-962f-4758-a3b7-6cad64c1e607
@@ -435,7 +435,7 @@
   why: Provide seamless authentication flow
   depends_on: [dd9dd1ae-0c56-4068-829d-52d0d7b0b360]
   priority: 19
-  status: []
+  status: [x]
 ---
 - uuid: 6b6c7fa4-e01c-409e-96fa-2704acb39469
   parent: 0eec49b0-962f-4758-a3b7-6cad64c1e607
@@ -443,7 +443,7 @@
   why: Explain how cookies are saved for reuse
   depends_on: [ea085e7d-4b09-4848-ae13-bd6c5f12e48d]
   priority: 19
-  status: []
+  status: [x]
 ---
 - uuid: bff624ee-2039-4e17-9087-67ab97d53d33
   parent: c88a4597-f135-4b9e-ba25-5016cdac80d9

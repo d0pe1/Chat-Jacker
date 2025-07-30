@@ -117,7 +117,8 @@
       "files": [
         "chatjacker_cli.py",
         "README.md",
-        "USAGE.md"
+        "USAGE.md",
+        "requirements.txt"
       ]
     },
     {

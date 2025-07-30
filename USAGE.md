@@ -38,6 +38,12 @@ The content script exposes helper methods via `window.chatJacker`:
 
 These utilities allow custom scripts to manage conversations or recover from DOM changes.
 
+## CLI Usage
+Run `python chatjacker_cli.py --help` to see available commands.
+Use `--target chatgpt --action search --query "hello"` as a quick example.
+Example: `python chatjacker_cli.py --target chatgpt --action send --query "Hello"`
+Run with `--target codex --action list_tasks` to list available Codex tasks.
+
 ## Running Tests
 Execute `npm test` to run the jsdom-based tests under `test/`. All tests should pass before creating a release package.
 
